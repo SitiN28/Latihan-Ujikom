@@ -27,7 +27,7 @@
 <body>
     <div class="main d-flex flex-column justify-content-center align-items-center">
     <div class="login-box">
-        <form action="{{ url('template') }}" method="post">
+        <form action="{{ url('login') }}" method="post">
             @csrf
             <div>
                 <label for="email" class="form-label">Email</label>

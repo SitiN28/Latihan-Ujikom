@@ -3,37 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\User;
-use Illuminate\Support\Facades\Auth;
+// use app\Models\User;
+// use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
    
-    function auth(Request $req){
-        $credentials = $req->only('email','password');
+    // function auth(Request $req){
+    //     $credentials = $req->only('email','password');
 
-        if(Auth::attempt($credentials)){
-            return redirect('template');
-        }
+    //     if(Auth::attempt($credentials)){
+    //         return redirect('template');
+    //     }
 
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
 
-    function create(Request $req){
+    // function create(Request $req){
 
-        $validate = $this->validate($req,[
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'password' => 'required|min;5'
+    //     $validate = $this->validate($req,[
+    //         'name' => 'required|string',
+    //         'email' => 'required|email',
+    //         'password' => 'required|min;5'
 
-        ]);
-        $validate['password'] = bcrypt($req->password);
+    //     ]);
+    //     $validate['password'] = bcrypt($req->password);
 
-        User::create($validate);
-        return redirect('login');
-    }
+    //     User::create($validate);
+    //     return redirect('login');
+    // }
 
-    function show(){
-        return view('template');
-    }
+    // function show(){
+    //     return view('template');
+    // }
 }
